@@ -1,12 +1,12 @@
 {
-  "name": "FENG WORLD",
-  "short_name": "FENG",
-  "description": "FENG WORLD Vision 8.0 - Streaming Experience",
-  "start_url": "index.html",
+  "name": "FENG WORLD - Vision 8.0",
+  "short_name": "FENG WORLD",
+  "start_url": "/index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0b0e14",
   "theme_color": "#d3f243",
-  "orientation": "portrait",
+  "description": "Watch movies and series on FENG WORLD. Installable PWA with offline support.",
   "icons": [
     {
       "src": "https://i.ibb.co/4tB3K3H/feng-logo.png",
