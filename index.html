@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>FENG WORLD - Vision 8.0</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0e14">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 :root {
     --primary: #d3f243;
@@ -282,24 +288,32 @@ search: async function(query){if(query.length<3)return;
     });
 },
 play:function(type,path,title){
-    this.hideDrawers(); 
-    document.getElementById('now-playing').innerText=title; 
-    // Using vidsrc.to player (can be changed later)
+    this.hideDrawers();
+    document.getElementById('now-playing').innerText=title;
     document.getElementById('video-frame').src=`https://vidsrc.to/embed/${type}/${path}`;
     document.getElementById('pane-player').style.display='flex';
 },
 view:function(pane,tab){
-    this.hideDrawers(); 
-    if(tab) document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')), tab.classList.add('active'); 
+    this.hideDrawers();
+    if(tab) document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')), tab.classList.add('active');
     if(pane!=='home') document.getElementById('pane-'+pane).style.display='flex';
 },
 loadType:function(type,tab){
-    this.view('home',tab); 
+    this.view('home',tab);
     this.loadShelf(`discover/${type}`, type==='movie'?'row-movies':'row-series');
 },
 hideDrawers:function(){document.querySelectorAll('.drawer').forEach(d=>d.style.display='none');},
 stopPlayer:function(){this.hideDrawers(); document.getElementById('video-frame').src='';}
 };
+</script>
+
+<!-- Service Worker registration -->
+<script>
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js')
+    .then(reg=>console.log('Service Worker registered', reg))
+    .catch(err=>console.error('Service Worker failed', err));
+}
 </script>
 </body>
 </html>
