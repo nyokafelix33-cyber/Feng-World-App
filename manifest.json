@@ -1,0 +1,22 @@
+{
+  "name": "FENG WORLD",
+  "short_name": "FENG",
+  "description": "FENG WORLD Vision 8.0 - Streaming Experience",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#d3f243",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/4tB3K3H/feng-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/4tB3K3H/feng-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
